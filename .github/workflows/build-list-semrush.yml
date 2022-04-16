@@ -1,4 +1,4 @@
-name: Build Database Update
+name: Build SemRush
 on:
   push:
     paths:
