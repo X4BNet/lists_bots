@@ -65,6 +65,9 @@ class IPListCIDR
 		$cidrs = array();
 		foreach ($ip_ranges as $range) {
 			if (!is_array($range)) {
+                if(strpos($range, '/') !== false) {
+                    continue;
+                }
 				$ip = \PhpIP\IP::create($range);
 				$cidrs[] = (string)$ip;
 			} else {
