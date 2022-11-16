@@ -19,7 +19,7 @@ jobs:
     - name: Build list
       run: |
         cat inputs/operamini.lsv | php helpers/loosen.php > /tmp/operamini.lsv
-        perl ./helpers/cleanup.pl /tmp/operamini.lsv > operamini.lsv
+        ./helpers/mapcidr -cl /tmp/operamini.lsv -a -silent > operamini.lsv
     - name: Test generated Lists
       run: |
         if [[ $(grep ^0. operamini.lsv | wc -l) != "0" ]]; then

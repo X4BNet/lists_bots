@@ -19,7 +19,7 @@ jobs:
     - name: Build list
       run: |
         cat inputs/semrush.lsv | php helpers/loosen.php > /tmp/semrush.lsv
-        perl ./helpers/cleanup.pl /tmp/semrush.lsv > semrush.lsv
+        ./helpers/mapcidr -cl /tmp/semrush.lsv -a -silent > semrush.lsv
     - name: Test generated Lists
       run: |
         if [[ $(grep ^0. semrush.lsv | wc -l) != "0" ]]; then

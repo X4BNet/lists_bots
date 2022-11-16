@@ -468,5 +468,6 @@ $out = array(
 $ips = array_merge(...$out);
 
 foreach($ips as $ip){
+    if(strpos($ip, ':')) continue;
     echo $ip,"\n";
 }
