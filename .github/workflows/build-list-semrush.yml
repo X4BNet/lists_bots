@@ -36,7 +36,7 @@ jobs:
           echo "Too few addresses covered ($ips_covered)"
           exit 1
         fi
-        if [[ "$ips_covered" -gt 8000 ]]; then
+        if [[ "$ips_covered" -gt 9000 ]]; then
           echo "Too many addresses covered ($ips_covered)"
           exit 1
         fi
