@@ -32,11 +32,11 @@ jobs:
         fi
 
         ips_covered=$(awk -F/ 'BEGIN{a=0}{if($2==""){a+1}else{a+=2^(32-$2)}}END{print a}' semrush.lsv)
-        if [[ "$ips_covered" -lt 15000 ]]; then
+        if [[ "$ips_covered" -lt 20000 ]]; then
           echo "Too few addresses covered ($ips_covered)"
           exit 1
         fi
-        if [[ "$ips_covered" -gt 25000 ]]; then
+        if [[ "$ips_covered" -gt 35000 ]]; then
           echo "Too many addresses covered ($ips_covered)"
           exit 1
         fi
